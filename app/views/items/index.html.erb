@@ -1,0 +1,15 @@
+<h1>Inventory</h1>
+
+<%= link_to 'New Item', new_item_path %>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= link_to item.name, item_path(item) %>
+      <%= link_to 'Edit', edit_item_path(item) %>
+      <%= form_with(model: item, method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
+        <%= form.submit 'Destroy', class: 'btn btn-danger', style: 'margin-left: 10px;' %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
