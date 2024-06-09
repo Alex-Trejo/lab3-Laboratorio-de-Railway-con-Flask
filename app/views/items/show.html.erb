@@ -1,6 +1,29 @@
-<h1><%= @item.name %></h1>
-<p><%= @item.description %></p>
-<p>Quantity: <%= @item.quantity %></p>
+<div class="item-container">
+  <div class="item-name-container"> <!-- Nuevo contenedor para el nombre del item -->
+    <h1><%= @item.name %></h1>
+  </div>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+  <% if @item.image.attached? %>
+    <%= image_tag @item.image, class: 'item-image' %>
+  <% end %>
+
+  <div class="item-details">
+    <div class="item-attribute">Name:</div>
+    <div class="item-value"><%= @item.name %></div>
+  </div>
+
+  <div class="item-details">
+    <div class="item-attribute">Description:</div>
+    <div class="item-value"><%= @item.description %></div>
+  </div>
+
+  <div class="item-details">
+    <div class="item-attribute">Quantity:</div>
+    <div class="item-value"><%= @item.quantity %></div>
+  </div>
+
+  <div class="actions">
+    <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-secondary' %> 
+    <%= link_to 'Back', items_path, class: 'btn btn-secondary' %>
+  </div>
+</div>

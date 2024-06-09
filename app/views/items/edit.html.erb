@@ -1,19 +1,25 @@
-<h1>Edit Item</h1>
+<div class="form-container">
+  <h1><%= action_name.capitalize %> Item</h1>
 
-<%= form_with model: @item, local: true do |form| %>
-<div>
-<%= form.label :name %>
-<%= form.text_field :name %>
+  <%= form_with model: @item, local: true, html: { multipart: true } do |form| %>
+    <div class="form-group">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-field' %>
+    </div>
+    <div class="form-group">
+      <%= form.label :description, class: 'form-label' %>
+      <%= form.text_area :description, class: 'form-field' %>
+    </div>
+    <div class="form-group">
+      <%= form.label :quantity, class: 'form-label' %>
+      <%= form.number_field :quantity, class: 'form-field' %>
+    </div>
+    <div class="form-group">
+      <%= form.label :image, class: 'form-label' %>
+      <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg', class: 'form-field' %>
+    </div>
+    <div class="form-submit">
+      <%= form.submit 'Save', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
 </div>
-<div>
-<%= form.label :description %>
-<%= form.text_area :description %>
-</div>
-<div>
-<%= form.label :quantity %>
-<%= form.number_field :quantity %>
-</div>
-<div>
-<%= form.submit %>
-</div>
-<% end %>

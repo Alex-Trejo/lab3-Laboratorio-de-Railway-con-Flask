@@ -1,62 +1,205 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-
-
-
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #dbdddf; /* Cambiado el color de fondo */
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .actions {
+    text-align: center;
+  }
+  
+  .actions a, .actions form {
+    display: inline-block;
+    margin: 0 10px;
 }
 
-h1 {
-  color: #333;
+.item-image {
+    max-width: 50%; /* Ajusta el ancho máximo de la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    display: block; /* Para evitar espacios no deseados */
+    margin: 30px auto; /* Espacio superior e inferior 30px, centrado horizontalmente */
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+
+.item-attribute {
+    font-weight: bold;
+    width: 150px; /* Ancho fijo para los nombres de atributos */
 }
 
-li {
-  padding: 10px;
-  background: #fff;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.item-value {
+    margin-left: 10px;
+    
+    
 }
 
-a {
-  color: #007bff;
-  text-decoration: none;
+
+
+/* Estilos para el show.html.erb */
+.item-details {
+    display: flex;
+    margin-bottom: 10px; /* Espacio inferior entre los detalles */
+  }
+  
+  .item-attribute {
+    font-weight: bold;
+    width: 150px; /* Ancho fijo para los nombres de atributos */
+    color: #6c757d; /* Gris oscuro para los nombres de atributos */
+  }
+  
+  .item-value {
+    margin-left: 10px;
+    color: #ece9e9; /* Texto blanco para los valores */
+  }
+  
+  .item-value a {
+    color: #007bff; /* Enlace azul */
+    text-decoration: none;
+  }
+  
+  .item-value a:hover {
+    text-decoration: underline;
+  }
+  
+  .item-image {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 30px auto; /* Centrar la imagen horizontalmente */
+  }
+  
+  .actions {
+    margin-top: 20px; /* Espacio superior entre los detalles y los botones */
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d; /* Gris oscuro para botones secundarios */
+  }
+  
+  .btn-secondary:hover {
+    background-color: #495057; /* Gris más oscuro al pasar el ratón */
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Azul para botones principales */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+  }
+
+.item-container {
+    background-color: #343a40; /* Gris oscuro para el fondo del contenedor */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px; /* Espacio inferior */
 }
 
-a:hover {
-  text-decoration: underline;
-}
+.item-name-container {
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
 
-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-div {
-  margin-bottom: 10px;
-}
+/* Estilos para el formulario de creación/edición */
+.form-container {
+    background-color: #f8f9fa; /* Fondo gris claro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Espacio entre los campos */
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da; /* Borde gris */
+    border-radius: 5px;
+  }
+  
+  .form-submit {
+    margin-top: 10px; /* Espacio superior para el botón de enviar */
+  }
+  
